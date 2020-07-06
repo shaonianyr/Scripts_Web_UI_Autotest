@@ -8,7 +8,7 @@
 
 ```
 # 部署项目
-git clone
+git clone https://github.com/ShaoNianyr/Scripts_Web_UI_Autotest
 cd Scripts_Web_UI_Autotest
 
 # 跳过 puppeteer 的 chronium 安装
