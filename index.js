@@ -3,7 +3,10 @@ const scripts_listen = require('./scripts/listen');
 const scripts_abort = require('./scripts/abort');
 const scripts_mock = require('./scripts/mock');
 const readFileList = require('./getDir/getDir');
-const scriptPath = './puppeteer/';
+// 演示使用 demo 执行
+const scriptPath = './demo/';
+// 实际使用 puppeteer 执行
+// const scriptPath = './puppeteer/';
  
 (async () => {
     const browser = await puppeteer.launch({
