@@ -19,18 +19,26 @@ npm i --ignore-scripts
 # 手动访问如下地址版本下载 puppeteer 的 chronium，解压至项目根目录下
 https://storage.googleapis.com/chromium-browser-snapshots/Mac/756035/chrome-mac.zip
 
-# 启动 demo 后端
-cd server
-node app.js
-
 # 启动 demo 拦截测试
-cd ..
 node index.js
+```
+
+## Methods
+
+```
+1. 正常监听 request 和 reponse
+scripts_listen(page, listen_url);
+
+2. 模拟异常中断 request
+scripts_abort(page, timeout_url, abort_type);
+
+3. mock reponse
+scripts_mock(page, mock_url, mock_status_code, mock_application_type, mock_body);
 ```
 
 ## View
 
-![example](example.png)
+![newExample](newExample.png)
 
 ## Contributing
 
