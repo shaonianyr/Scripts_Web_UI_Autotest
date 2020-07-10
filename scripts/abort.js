@@ -13,7 +13,7 @@ module.exports = async (page, url, abortType) => {
                 interceptedRequest.abort(abortType);
             }
         } else {
-            interceptedRequest.abort(abortType);
+            interceptedRequest.continue(abortType);
         }
     });
     page.on('requestfailed', requestFailed => {
