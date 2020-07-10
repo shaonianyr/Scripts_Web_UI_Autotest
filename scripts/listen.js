@@ -1,6 +1,7 @@
 module.exports = async (page, url) => {
     page.on('request', interceptedRequest => {
-        if (interceptedRequest.url() === url) {
+        var str = interceptedRequest.url()
+        if (str.search(url) != -1) {
             console.log("【 正在监听 】");
             if (interceptedRequest.method() === 'GET') {
                 console.log(interceptedRequest.method(), interceptedRequest.url());
@@ -17,15 +18,18 @@ module.exports = async (page, url) => {
         }
     });
     page.on('response', async function(response){
-        try {
-            let message = await response.text();
-            console.log("【 监听结果 】");
-            console.log("RESPONSE_URL", response.url());
-            console.log("RESPONSE_STATUS", response.status(), response.statusText());
-            console.log("RESPONSE_BODY\n", message);
-        } catch (error) {
-            console.log("【 监听结果 】")
-            console.log(err)
+        var str = response.url()
+        if (str.search(url) != -1) {
+            try {
+                let message = await response.text();
+                console.log("【 监听结果 】");
+                console.log("RESPONSE_URL", response.url());
+                console.log("RESPONSE_STATUS", response.status(), response.statusText());
+                console.log("RESPONSE_BODY\n", message);
+            } catch (error) {
+                console.log("【 监听结果 】")
+                console.log(err)
+            }
         }
     });
 };

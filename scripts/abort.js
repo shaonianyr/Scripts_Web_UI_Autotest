@@ -1,6 +1,7 @@
 module.exports = async (page, url, abortType) => {
     page.on('request', interceptedRequest => {
-        if (interceptedRequest.url() === url) {
+        var str = interceptedRequest.url()
+        if (str.search(url) != -1) {
             console.log("【 正在监听 】");
             if (interceptedRequest.method() === 'GET') {
                 console.log(interceptedRequest.method(), interceptedRequest.url());
@@ -17,8 +18,11 @@ module.exports = async (page, url, abortType) => {
         }
     });
     page.on('requestfailed', requestFailed => {
-        console.log("【 监听结果 】")
-        console.log("REQUEST_URL", requestFailed.url());
-        console.log("REQUEST_ERROR", requestFailed.failure().errorText);
+        var str = requestFailed.url()
+        if (str.search(url) != -1) {
+            console.log("【 监听结果 】")
+            console.log("REQUEST_URL", requestFailed.url());
+            console.log("REQUEST_ERROR", requestFailed.failure().errorText);
+        }
     });
 };
