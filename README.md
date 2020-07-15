@@ -34,13 +34,27 @@ scripts_abort(page, timeout_url, abort_type);
 
 3. mock reponse
 scripts_mock(page, mock_url, mock_status_code, mock_application_type, mock_body);
+
+4. 监听埋点上报信息
+scripts_point(page, point_url);
+
+5. 获取埋点上报信息
+# 提取埋点上报连接的埋点数据
+scripts_convert.pointData(point_url);
+# base64 加密
+scripts_convert.base64Encode(point_data);
+# base64 解密
+scripts_convert.base64Decode(point_data);
+
+6. 执行 cmd 功能
+scripts_cmd.cmd(shell);
 ```
 
 ## View
 
-### listen & mock
+### listen & mock & point
 
-![newExample](newExample.png)
+![newExample2](newExample2.png)
 
 ### cmd
 
