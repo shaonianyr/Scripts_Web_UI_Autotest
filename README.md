@@ -38,7 +38,13 @@ scripts_mock(page, mock_url, mock_status_code, mock_application_type, mock_body)
 
 ## View
 
+### listen & mock
+
 ![newExample](newExample.png)
+
+### cmd
+
+![cmdExample](cmdExample.png)
 
 ## Contributing
 
