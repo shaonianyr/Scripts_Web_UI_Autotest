@@ -4,6 +4,8 @@
 
 技术栈: node.js && puppeteer
 
+技术交流 QQ 群: 552643038
+
 备注: demo 里面通过 goto.url 的方式来触发拦截，实际上可以通过模拟自动点点点的方式来触发拦截，支持监听正常 Response 做校验断言，也支持拦截超时，中断请求，mock数据等各种异常状态的模拟，已封装好函数可快捷调用实现。
 
 下列图片无法加载请访问 testerhome: https://testerhome.com/topics/24699
