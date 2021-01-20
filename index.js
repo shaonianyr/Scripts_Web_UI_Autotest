@@ -10,7 +10,6 @@ const scriptPath = './demo/';
  
 (async () => {
     const browser = await puppeteer.launch({
-        executablePath: './756035/Chromium.app/Contents/MacOS/Chromium',
         // headless: false
         headless: true
     });
